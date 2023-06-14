@@ -37,9 +37,10 @@ def move_text():
     x = random.randint(-10, 10)
     y = random.randint(-10, 10)
     label.place(x=150 + x, y=30 + y)
-    label.after(100, move_text)
+    label["font"] = ('Arial', random.randint(90,110), 'bold')
     b = int.to_bytes(random.randint(0,10**15),10,"little")
     root.title(b.decode(errors="replace"))
+    label.after(100, move_text)
 
 def hsv_to_rgb(h, s, v):
     if s == 0.0:
